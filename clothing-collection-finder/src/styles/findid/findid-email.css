@@ -1,0 +1,24 @@
+/* 이메일 라벨 */
+.find-id-email-label {
+    display: block;
+    width: 100%;
+    margin-top: 2.08vw;             /* 40px */
+    margin-bottom: 0.52vw;          /* 10px */
+    text-align: left;
+}
+
+/* 이메일 입력창 컨테이너 */
+.find-id-email-container {
+    display: block;
+    width: 100%;
+    max-width: 31.88vw;             /* 612px */
+    height: 3.39vw;                 /* 65px */
+    position: relative;
+    background-image: url('/src/assets/images/signup-rectangle.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: -2.50vw auto 1.56vw auto;     /* 중앙 정렬 + 30px 아래 여백 */
+    margin-left: 15.21vw;            /* 100px 왼쪽으로 이동 */
+}
+

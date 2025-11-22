@@ -1,0 +1,49 @@
+/* 전역 스타일 */
+@import './components.css';
+@import './navigation.css';
+@import './sidebar.css';
+@import './share.css';
+@import './shareWriting.css';
+@import './post.css';
+
+/* CSS 변수 정의 - 네비게이션 높이 */
+:root {
+    --nav-height: 70px;
+}
+
+/* 반응형 네비게이션 높이 */
+@media (max-width: 1366px) {
+    :root {
+        --nav-height: 65px;
+    }
+}
+
+@media (max-width: 1024px) {
+    :root {
+        --nav-height: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --nav-height: 55px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html, body, #app {
+    height: 100%;
+    width: 100%;
+    overflow: hidden
+}
+/* 추가로 넣고 싶은 전역 스타일들 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+

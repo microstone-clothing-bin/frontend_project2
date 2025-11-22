@@ -1,0 +1,242 @@
+/* src/styles/sidebar.css */
+@import './sidebar/clothing-bins.css';
+@import './sidebar/scrollbar.css';
+/* 왼쪽 사이드바 컴포넌트 */
+.sidebar-content-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* 검색창 섹션 */
+.search-section {
+    padding: 34px 20px 20px 20px; /* 위쪽 패딩 30px로 증가 */
+}
+
+.search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 338px;
+    height: 50px; /* 고정 높이 설정 */
+    margin-left: 13px;
+}
+
+/* 검색창 배경 이미지 */
+.search-input-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.search-input-background img {
+    width: 100%;
+    height: 100%;
+    object-fit:  fill; /* 이미지가 컨테이너에 맞게 늘어남 */
+}
+
+/* 실제 입력창 (투명 오버레이) */
+.search-input-overlay {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    padding: 0 60px 0 20px; /* 왼쪽 20px, 오른쪽 60px (버튼 공간) */
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 0.95rem;
+    color: #374151;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif;
+}
+
+.search-input-overlay::placeholder {
+    color: #9ca3af;
+}
+
+/* 검색 버튼 이미지 */
+.search-button-image {
+    position: absolute;
+    right: 12px; /* 오른쪽에서 12px */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-button-image img {
+    width: 23px;  /* 버튼 크기 줄임 */
+    height: 23px;
+    object-fit: contain;
+}
+
+.search-button-image:hover {
+    opacity: 0.8;
+    transform: translateY(-50%) scale(1.1); /* 호버 시 약간 커짐 */
+}
+
+.search-button-image:active {
+    transform: translateY(-50%) scale(0.95);
+    opacity: 0.6;
+}
+
+/* 현재 위치 섹션 */
+.current-location {
+    padding: 7px;
+    background-color: #ffffff !important;
+}
+
+.current-location h3 {
+    margin: 0 0 15px 0;
+    color: #374151;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-left: 24px;
+    font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif;
+}
+
+.location-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 24px;
+}
+
+.location-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location-icon img {
+    width: 20px;   /* 원하는 크기로 조정 */
+    height: 20px;
+    object-fit: contain;
+}
+
+.location-text .location-name {
+    color: #1f2937;
+    font-size: 1.1rem;
+    font-weight: 800;
+    font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif;
+}
+
+/* 주변 의류수거함 섹션 */
+.nearby-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    margin-top: 15px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: relative;
+}
+
+.section-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 31px;
+    right: 31px;
+    height: 2px;
+    background-color: #DCDCDC;
+}
+
+.section-header h3 {
+    margin: 0;
+    color: #374151;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif;
+}
+
+.filter-text {
+    font-size: 0.75rem;
+    color: #374151;
+    font-weight: 500;
+    font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif;
+}
+
+/* 태블릿 크기부터 사이드바 축소 시작 */
+@media (max-width: 1024px) {
+    .sidebar-content-wrapper {
+        width: 280px;               /* 기본보다 축소 */
+    }
+
+    .search-input-wrapper {
+        width: 350px;               /* 검색창도 축소 */
+        margin-left: 9px;
+    }
+
+    .section-header {
+        padding: 15px 20px;         /* 패딩 축소 */
+    }
+
+    .section-header::after {
+        right: 10px;
+        right: -80px;
+    }
+
+    .section-header h3{
+        margin-left: 1.3vw;
+    }
+
+    .filter-text{
+        display: none !important;
+    }
+}
+
+/* 작은 태블릿 크기 */
+@media (max-width: 768px) {
+    .sidebar-content-wrapper {
+        width: 250px;               /* 더 축소 */
+    }
+
+    .search-input-wrapper {
+        width: 287px;
+        height: 45px;               /* 높이도 축소 */
+        margin-left: 1px;
+    }
+
+    .search-section {
+        padding: 46px 15px 15px 15px; /* 패딩 축소 */
+    }
+
+    .current-location {
+        padding: 5px;
+    }
+
+    .current-location h3,
+    .section-header h3 {
+        font-size: 0.8rem;          /* 폰트 축소 */
+
+    }
+
+    .location-text .location-name {
+        font-size: 1.0rem;          /* 폰트 축소 */
+    }
+
+    .section-header::after{
+        left: 30px;
+        right: -24px;
+    }
+}
+
